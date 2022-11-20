@@ -1,0 +1,13 @@
+@mixin flexible($fd: "", $ai: "", $jc: "") {
+  display: flex;
+  flex-direction: unquote($fd);
+  align-items: unquote($ai);
+  justify-content: unquote($jc);
+}
+
+@mixin bgImage($url,$size){
+  background-image: url($url);
+  background-size:$size;
+  background-position: center;
+  background-repeat: no-repeat;
+}

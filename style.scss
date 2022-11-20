@@ -1,0 +1,738 @@
+@import "./stylesheet/global";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  //1440-195*2=1050
+  max-width: 1050px;
+  width: 73%;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+.top-title {
+  color: $secondary-color;
+  font-weight: 700;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+.title {
+  color: $primary-color;
+  font-size: 40px;
+  line-break: 50px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.txt {
+  color: $second-text-color;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  width: 469px;
+}
+
+// Header styles
+header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  padding-top: 31px;
+  // padding-bottom: 31px;
+  @include flexible("", center, center);
+
+  .header {
+    @include flexible("", center, "");
+
+    .brandname {
+      color: $primary-color;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32px;
+      cursor: pointer;
+    }
+
+    .header-menu {
+      list-style: none;
+      @include flexible("", center, "");
+      gap: 21px;
+      margin-right: 240px;
+      margin-left: 87px;
+
+      &__item {
+        a {
+          color: $second-text-color;
+          text-decoration: none;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+    }
+
+    &__login-section {
+      @include flexible("", center, center);
+      gap: 45px;
+
+      .login {
+        color: $secondary-color;
+        font-weight: 700;
+        line-height: 22px;
+        font-size: 14px;
+        text-decoration: none;
+      }
+
+      &-btn {
+        width: 137px;
+        background-color: $secondary-color;
+        color: #fff;
+        border-color: transparent;
+        border-radius: $border-radius;
+        padding: 15px 25px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 22px;
+      }
+    }
+  }
+}
+
+//Home page styles
+.home-page {
+  position: relative;
+  @include bgImage("./images/home_page_bg.png", cover);
+  height: 825px;
+  width: 100%;
+
+  .home {
+    @include flexible(column, center, center);
+    height: inherit;
+
+    &__headline {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      color: $secondary-color;
+      margin-bottom: 40px;
+    }
+
+    &__title {
+      color: $primary-color;
+      font-weight: 700;
+      font-size: 58px;
+      line-height: 80px;
+    }
+
+    &__desc-text {
+      margin: 40px 0;
+      font-size: 20px;
+      line-height: 30px;
+      color: $second-text-color;
+      text-align: center;
+    }
+
+    &__buttons {
+      @include flexible("", center, center);
+      gap: 15px;
+    }
+
+    &__btn,
+    &__learn-more-btn {
+      padding: 15px 40px;
+      border-radius: $border-radius;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 22px;
+    }
+
+    &__btn {
+      background-color: $secondary-color;
+      border: 1px solid $secondary-color;
+      color: #fff;
+    }
+
+    &__learn-more-btn {
+      border: 1px solid $secondary-color;
+      background-color: transparent;
+      color: $secondary-color;
+    }
+  }
+}
+
+//Companies section styles
+.companies-section {
+  height: 335px;
+  width: 100%;
+  @include flexible("", center, center);
+
+  .companies {
+    @include flexible("", center, "");
+    gap: 86px;
+  }
+}
+
+//Packages section styles
+.section-packages {
+  width: 100%;
+  padding-top: 112px;
+  padding-bottom: 150px;
+
+  .packages {
+    &__top-text {
+      color: $secondary-color;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+
+    &__title {
+      color: $primary-color;
+      line-height: 50px;
+      font-size: 40px;
+      font-weight: 700;
+      margin: 10px 0;
+    }
+
+    &__subtext {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &__cards-container {
+      @include flexible("", "", "");
+      gap: 30px;
+
+      .packages__card {
+        margin-top: 112px;
+        padding: 35px 60px 35px 40px;
+        width: 238px;
+        min-height: 288px;
+        box-shadow: $box-shadow;
+        @include flexible(column, "", "");
+
+        &-title {
+          font-weight: 700;
+          font-size: 16px;
+          display: block;
+          margin-top: 29px;
+        }
+
+        &__divider {
+          margin: 20px 0;
+          border-bottom: 2px solid #e74040;
+          width: 50px;
+        }
+
+        &-txt {
+          font-size: 14px;
+          line-height: 20px;
+          color: $second-text-color;
+        }
+
+        &.active {
+          color: #fff;
+          background: $secondary-color;
+
+          .packages__card-txt {
+            color: #fff;
+          }
+
+          .packages__card__divider {
+            border-color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Advertising section styles
+.advertising-section {
+  width: 100%;
+  padding: 160px 0;
+
+  .advertising {
+    @include flexible("", center, "");
+    gap: 203px;
+
+    .advertising-content__bg {
+      width: 415px;
+      height: 484px;
+      @include bgImage("./images/bg.png", contain);
+    }
+
+    .advertising-content__desc {
+      width: 350px;
+
+      .advertising-content__title {
+        color: $primary-color;
+        font-size: 40px;
+        line-height: 50px;
+        font-weight: 700;
+      }
+
+      .advertising-content__txt {
+        font-size: 14px;
+        line-height: 20px;
+        color: $second-text-color;
+        margin: 35px 0;
+      }
+
+      .divider {
+        margin: 20px 0;
+        border-bottom: 7px solid #e74040;
+        width: 94px;
+      }
+
+      .advertising-content__more {
+        @include flexible("", center, center);
+        gap: 10px;
+
+        .advertising-section__excerpt {
+          color: $secondary-color;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 24px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+//Trainings section styles
+.trainings-section {
+  width: 100%;
+  padding: 112px 0;
+  background-color: $faded-primary-color;
+
+  .top-title {
+    color: $secondary-color;
+    font-weight: 700;
+    line-height: 24px;
+    font-size: 14px;
+  }
+
+  .title {
+    color: $primary-color;
+    font-size: 40px;
+    line-break: 50px;
+    font-weight: 700;
+    margin: 10px 0;
+  }
+
+  .txt {
+    color: $second-text-color;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    width: 469px;
+  }
+
+  .trainings-content {
+    display: flex;
+    gap: 30px;
+
+    &__packages {
+      margin-top: 112px;
+    }
+
+    &__item {
+      width: 238px;
+      background-color: #fff;
+
+      &__img-content {
+        position: relative;
+        object-fit: cover;
+        height: 100%;
+
+        .sale-btn {
+          width: 51px;
+          background-color: $danger-color;
+          color: #fff;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 24px;
+          border: transparent;
+          border-radius: 3px;
+          padding: 0px 10px;
+          position: absolute;
+          left: 20px;
+          top: 20px;
+        }
+
+        .trainings-content__icons {
+          @include flexible("", center, "");
+          position: absolute;
+          gap: 10px;
+          bottom: 24px;
+          left: 49px;
+
+          &-item {
+            border-radius: 50px;
+            padding: 11px;
+            background-color: #fff;
+            @include flexible("", center, center);
+          }
+        }
+      }
+
+      &__desc-block {
+        padding: 25px 14px 40px 26px;
+
+        &__txt {
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 24px;
+          color: $secondary-color;
+        }
+
+        &__title {
+          margin: 10px 0;
+          color: $primary-color;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 24px;
+        }
+
+        &__info {
+          color: $second-text-color;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 20px;
+        }
+
+        &__download {
+          @include flexible("", center, "");
+          gap: 10px;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 24px;
+          color: $second-text-color;
+          margin: 15px 0;
+        }
+
+        &__sales {
+          display: flex;
+          gap: 10px;
+          padding-bottom: 30px;
+
+          .price {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+          }
+
+          .one {
+            color: $second-text-color-light;
+          }
+
+          .second {
+            color: $secondary-color-2;
+          }
+        }
+      }
+
+      .learn-more-btn {
+        @include flexible("", center, center);
+        gap: 10px;
+        color: $secondary-color;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 24px;
+        background-color: transparent;
+        border: 1px solid $secondary-color;
+        padding: 10px 20px;
+        border-radius: 37px;
+      }
+    }
+  }
+}
+
+//Education cards section styles
+.education-card-section {
+  width: 100%;
+  padding: 160px 0 198px;
+
+  .education-cards {
+    display: flex;
+    gap: 35px;
+
+    .card {
+      width: 323px;
+      margin-top: 100px;
+      box-shadow: $box-shadow;
+      padding: 50px 20px;
+      background: #fff;
+      position: relative;
+
+      &-like,
+      &-new {
+        margin-bottom: 35px;
+        background-color: $secondary-color;
+        border-radius: 200px;
+        padding: 30px;
+        width: 96px;
+        @include flexible("", center, center);
+      }
+
+      &-new {
+        position: absolute;
+        right: -20px;
+        top: -52px;
+        background-color: #e77c40;
+        color: #fff;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+      }
+
+      &__title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        color: $primary-color;
+        margin-bottom: 35px;
+      }
+
+      .txt {
+        font-weight: 700;
+      }
+
+      .card-price {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 50px;
+        color: $secondary-color;
+        margin-top: 35px;
+
+        &-info {
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 24px;
+          color: #8ec2f2;
+        }
+      }
+
+      &-info {
+        font-size: 14px;
+        line-height: 20px;
+        color: $second-text-color;
+        margin: 35px 0;
+      }
+
+      &-btn {
+        width: 100%;
+        color: #fff;
+        background-color: $secondary-color;
+        padding: 15px 40px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 22px;
+        border-radius: 5px;
+        border-color: transparent;
+      }
+
+      .features-list {
+        list-style: none;
+        margin-top: 39px;
+
+        &__item {
+          @include flexible("", center, "");
+          gap: 10px;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 24px;
+          color: $primary-color;
+          &:not(&:nth-child(5)) {
+            margin-bottom: 15px;
+          }
+
+          .check-icon {
+            height: 32px;
+            width: 32px;
+            border-radius: 200px;
+            line-height: 32px;
+            text-align: center;
+            background-color: $second-text-color-light;
+
+            &.checked {
+              background-color: #2dc071;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//Testimonials section styles
+.testimonials {
+  width: 100%;
+  padding: 160px 0 97px;
+
+  .testimonials-cards {
+    @include flexible("", center, center);
+    gap: 30px;
+
+    .testimonials-card {
+      margin-top: 96px;
+      @include flexible(column, center, center);
+
+      .userpic {
+        margin-bottom: 30px;
+
+        img {
+          width: 128px;
+          height: 128px;
+          border-radius: 200px;
+        }
+      }
+
+      .userdesc {
+        color: $second-text-color;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        width: 320px;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+
+      .stars {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+
+      .username {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        color: $primary-color;
+      }
+      .profession {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 24px;
+        color: $second-text-color;
+      }
+    }
+  }
+}
+
+//Subscribe section styles
+.subscribe-section {
+  width: 100%;
+  padding: 160px 0;
+  @include flexible("", center, center);
+
+  .subscribe-content {
+    text-align: center;
+    @include flexible(column, center, center);
+
+    .form-container {
+      margin-top: 80px;
+      width: 668px;
+      display: flex;
+      background: #f9f9f9;
+      border: 1px solid #e6e6e6;
+      border-radius: 5px;
+
+      .form-btn {
+        width: 117px;
+        background: #96bb7c;
+        border: 1px solid #e6e6e6;
+        border-radius: 0px 5px 5px 0px;
+        color: #fff;
+        font-size: 14px;
+        line-height: 28px;
+        padding: 15px 22px;
+      }
+
+      input {
+        width: 551px;
+        outline: none;
+        background: #f9f9f9;
+        border: none;
+        padding: 15px 20px;
+
+        &::placeholder {
+          color: $second-text-color;
+          font-size: 14px;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+}
+
+//Footer
+footer {
+  width: 100%;
+
+  .footer {
+    padding-bottom: 50px;
+    display: flex;
+    gap: 63px;
+
+    .list-title {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      color: $primary-color;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .contact-list {
+      list-style: none;
+
+      &_item {
+        @include flexible("", center, "");
+        gap: 10px;
+        color: $second-text-color;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .footer-bottom {
+    width: 100%;
+    background: #fafafa;
+    padding: 25px 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    color: $second-text-color;
+
+    .footer-bottom-content {
+      @include flexible("", center, space-between);
+
+      .social-icons {
+        display: flex;
+        gap: 22px;
+      }
+    }
+  }
+}
